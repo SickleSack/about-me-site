@@ -63,6 +63,22 @@
             max-width: 600px;
             border-radius: 10px;
         }
+
+        /* Improve layout for smaller screens */
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            nav button {
+                width: 100%;
+                margin: 4px 0;
+                font-size: 14px;
+            }
+            .section {
+                padding: 15px;
+            }
+        }
     </style>
     <script>
         // Simple tab switching logic
@@ -91,8 +107,8 @@
     
     <div id="about" class="section">
         <h1>About Me</h1>
-        <p>Hello! I’m a musician, nurse, coder and all-around creative based in Chicago. I love writing and recording concept albums, practicing guitar, exploring philosophy, and caring for patients in the progressive care unit.</p>
-        <p>When I’m not in the hospital or the studio, you’ll find me learning Spanish, coding small apps to improve my workflow, or hanging out with friends and family.</p>
+        <p>I’m Chase — a new grad cardiac PCU nurse, musician, and creative who’s constantly trying to balance science, art, and real human connection. Most of my time is spent either in the hospital, playing guitar, recording music, or getting lost thinking about ideas that probably don’t matter as much as they feel like they do at 2 a.m. Musically, I’m heavily inspired by classic rock, blues, folk, jazz, and the atmosphere of older records that feel alive and imperfect. I love the process of creating something meaningful from nothing, whether that’s music, writing, coding small projects, or even learning entirely new skills just to see where they lead.</p>
+        <p>Outside of that, I’m into philosophy, cooking, Spanish, traveling, long conversations, and honestly just trying to experience life deeply enough to turn it into art someday. This page is basically a collection of the things, people, and ideas that make me who I am.</p>
         <p>Find me online: <a href="https://youtube.com/@chasepassion" target="_blank">YouTube</a> • <a href="https://instagram.com/chasepassion4" target="_blank">Instagram</a></p>
     </div>
     
