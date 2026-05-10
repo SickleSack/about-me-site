@@ -1,174 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>My World</title>
-<style>
-body {
-  background-color: #0a2c24;
-  color: #eaeaea;
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-}
-nav {
-  display: flex;
-  justify-content: center;
-  background-color: #022016;
-  padding: 10px;
-  flex-wrap: wrap;
-}
-nav button {
-  background: none;
-  border: 1px solid #76c7a2;
-  color: #76c7a2;
-  padding: 10px 15px;
-  margin: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-nav button:hover,
-nav button.active {
-  background-color: #76c7a2;
-  color: #022016;
-}
-.section {
-  display: none;
-  padding: 20px;
-  text-align: center;
-}
-.section.active {
-  display: block;
-}
-h1, h2 {
-  margin-top: 0;
-  font-weight: 700;
-  -webkit-text-stroke: 1px black;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
-}
-a {
-  color: #76c7a2;
-  text-decoration: none;
-}
-a:hover {
-  color: #94d9bb;
-}
-.profile-img {
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: top center;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-}
-img.section-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-}
-.img-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 10px;
-  padding: 10px;
-}
-.img-gallery img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-}
-@media (max-width: 600px) {
-  .profile-img {
-    width: 180px;
-    height: 180px;
-  }
-  nav button {
-    font-size: 14px;
-    padding: 8px 10px;
-  }
-}
-</style>
+    <meta charset="UTF-8">
+    <title>My World</title>
+    <style>
+        body {
+            background-color: #0a2c24;
+            color: #eaeaea;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #022016;
+            padding: 10px;
+            flex-wrap: wrap;
+        }
+        nav button {
+            background: none;
+            border: 1px solid #76c7a2;
+            color: #76c7a2;
+            padding: 10px 15px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        nav button:hover,
+        nav button.active {
+            background-color: #76c7a2;
+            color: #022016;
+        }
+        .section {
+            display: none;
+            padding: 20px;
+            text-align: center;
+        }
+        .section.active {
+            display: block;
+        }
+        h1, h2 {
+            margin-top: 0;
+            font-weight: 700;
+            -webkit-text-stroke: 1px black;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        a {
+            color: #76c7a2;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #94d9bb;
+        }
+        /* Placeholder boxes for future content */
+        .placeholder {
+            border: 2px dashed #76c7a2;
+            padding: 40px;
+            margin: 20px auto;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+    </style>
+    <script>
+        // Simple tab switching logic
+        function showSection(id) {
+            const sections = document.querySelectorAll('.section');
+            const buttons = document.querySelectorAll('nav button');
+            sections.forEach(sec => sec.classList.remove('active'));
+            buttons.forEach(btn => btn.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            document.getElementById(id + '-btn').classList.add('active');
+        }
+        window.onload = function() {
+            showSection('about');
+        };
+    </script>
 </head>
 <body>
-<nav>
-  <button data-target="about" onclick="showSection('about')" class="active">About</button>
-  <button data-target="music" onclick="showSection('music')">Music</button>
-  <button data-target="nursing" onclick="showSection('nursing')">Nursing &amp; Career</button>
-  <button data-target="projects" onclick="showSection('projects')">Projects &amp; Tech</button>
-  <button data-target="friends" onclick="showSection('friends')">Friends &amp; Life</button>
-  <button data-target="gallery" onclick="showSection('gallery')">Gallery</button>
-</nav>
-<div id="about" class="section active">
-  <img src="8D9D102D-3965-4CAB-9618-F2DD167CA349.jpeg" alt="My headshot" class="profile-img">
-  <h1>About Me</h1>
-  <p>Hello! I'm a musician, nurse, coder and all‑around creative based in Chicago. I love writing and recording concept albums, practicing guitar, exploring philosophy, and caring for patients in the progressive care unit.</p>
-  <p>When I'm not in the hospital or the studio, you'll find me learning Spanish, coding small apps to improve my workflow, or hanging out with friends and family.</p>
-  <p>Find me online: <a href="https://youtube.com/@chasepassion" target="_blank">YouTube</a> &bull; <a href="https://instagram.com/chasepassion4" target="_blank">Instagram</a></p>
-</div>
-<div id="music" class="section">
-  <h2>Music</h2>
-  <p>Music fuels my soul. I'm an avid guitarist and songwriter with a special interest in concept albums. I draw inspiration from blues, rock and indie styles and I'm currently working on a project exploring themes of light and shadow.</p>
-  <img src="BA6A4D21-2442-4716-AF8F-539E610D86E0.jpeg" alt="Playing acoustic guitar" class="section-img">
-  <img src="60C372D7-7165-44BE-8285-569CD2557399.jpeg" alt="Practicing guitar at home" class="section-img">
-  <img src="215C25E2-5F3B-4E3C-A72A-D0359147E9EA.jpeg" alt="Playing electric guitar" class="section-img">
-  <img src="84961BB4-0BDC-44F5-B369-BD2B918CB893.jpeg" alt="Guitar outdoors" class="section-img">
-</div>
-<div id="nursing" class="section">
-  <h2>Nursing &amp; Career</h2>
-  <p>As a registered nurse working in a progressive care unit, I cherish the opportunity to care for patients and deepen my clinical skills. Long term, I'm preparing for a career in anesthesia. I enjoy analyzing telemetry strips, learning pharmacology and discussing complex physiology.</p>
-  <img src="C6F74FE2-D850-4126-87BB-2775805B0071.jpeg" alt="Clinical inspiration" class="section-img">
-</div>
-<div id="projects" class="section">
-  <h2>Projects &amp; Tech</h2>
-  <p>Beyond music and nursing, I'm passionate about coding and exploring technology. I build small apps to track my guitar practice, experiment with AI agents and design websites like this one. I'm fascinated by how technology can enhance creativity and productivity.</p>
-  <img src="01331790-6D1E-4CF0-B80B-F9A65F984ADA.jpeg" alt="Inspiration for coding projects" class="section-img">
-</div>
-<div id="friends" class="section">
-  <h2>Friends &amp; Life</h2>
-  <p>Life isn't all work and practice. The people around me shape who I am and provide the laughs and adventures that inspire my songs. I cherish time spent with friends and family—whether we're at a concert, cooking dinner together or celebrating special events.</p>
-  <img src="22BBE76F-65E0-48E6-B5DD-634F9B5E01C9.jpeg" alt="Friends group" class="section-img">
-  <img src="4CF3650A-BAF2-4B97-A4E0-4634ACE3C30F.jpeg" alt="Mirror selfie in jacket" class="section-img">
-  <img src="F0F2930F-88CA-472A-9D19-72ADA2C8508D.jpeg" alt="Cooking at home" class="section-img">
-  <img src="20228B3B-89D1-4F12-B4B7-8AE45F2B322B.jpeg" alt="Sunglasses selfie" class="section-img">
-  <img src="2AD67B5B-EFC8-411B-B9E0-7123F44DE28F.jpeg" alt="Sitting with a friend" class="section-img">
-</div>
-<div id="gallery" class="section">
-  <h2>Gallery</h2>
-  <div class="img-gallery">
-    <img src="BA6A4D21-2442-4716-AF8F-539E610D86E0.jpeg" alt="Playing acoustic guitar">
-    <img src="60C372D7-7165-44BE-8285-569CD2557399.jpeg" alt="Practicing guitar at home">
-    <img src="215C25E2-5F3B-4E3C-A72A-D0359147E9EA.jpeg" alt="Playing electric guitar">
-    <img src="84961BB4-0BDC-44F5-B369-BD2B918CB893.jpeg" alt="Guitar outdoors">
-    <img src="22BBE76F-65E0-48E6-B5DD-634F9B5E01C9.jpeg" alt="Friends group">
-    <img src="4CF3650A-BAF2-4B97-A4E0-4634ACE3C30F.jpeg" alt="Mirror selfie in jacket">
-    <img src="F0F2930F-88CA-472A-9D19-72ADA2C8508D.jpeg" alt="Cooking at home">
-    <img src="20228B3B-89D1-4F12-B4B7-8AE45F2B322B.jpeg" alt="Sunglasses selfie">
-    <img src="2AD67B5B-EFC8-411B-B9E0-7123F44DE28F.jpeg" alt="Sitting with a friend">
-    <img src="01331790-6D1E-4CF0-B80B-F9A65F984ADA.jpeg" alt="Inspiration for coding projects">
-    <img src="C6F74FE2-D850-4126-87BB-2775805B0071.jpeg" alt="Clinical inspiration">
-  </div>
-</div>
-<script>
-function showSection(id) {
-  const sections = document.querySelectorAll('.section');
-  sections.forEach(section => {
-    section.classList.remove('active');
-  });
-  document.getElementById(id).classList.add('active');
-  const buttons = document.querySelectorAll('nav button');
-  buttons.forEach(button => {
-    button.classList.remove('active');
-    if (button.getAttribute('data-target') === id) {
-      button.classList.add('active');
-    }
-  });
-}
-</script>
+    <nav>
+        <button id="about-btn" onclick="showSection('about')">About</button>
+        <button id="music-btn" onclick="showSection('music')">Music</button>
+        <button id="career-btn" onclick="showSection('career')">Nursing &amp; Career</button>
+        <button id="projects-btn" onclick="showSection('projects')">Projects &amp; Tech</button>
+        <button id="friends-btn" onclick="showSection('friends')">Friends &amp; Life</button>
+        <button id="gallery-btn" onclick="showSection('gallery')">Gallery</button>
+    </nav>
+    
+    <div id="about" class="section">
+        <h1>About Me</h1>
+        <p>Hello! I’m a musician, nurse, coder and all-around creative based in Chicago. I love writing and recording concept albums, practicing guitar, exploring philosophy, and caring for patients in the progressive care unit.</p>
+        <p>When I’m not in the hospital or the studio, you’ll find me learning Spanish, coding small apps to improve my workflow, or hanging out with friends and family.</p>
+        <p>Find me online: <a href="https://youtube.com/@chasepassion" target="_blank">YouTube</a> • <a href="https://instagram.com/chasepassion4" target="_blank">Instagram</a></p>
+    </div>
+    
+    <div id="music" class="section">
+        <h1>Music</h1>
+        <p>I’m always experimenting with sounds and genres, from blues to folk. My music often explores introspective themes and tells cohesive stories through entire albums.</p>
+        <div class="placeholder">Music images and clips will go here.</div>
+    </div>
+    
+    <div id="career" class="section">
+        <h1>Nursing &amp; Career</h1>
+        <p>As a Progressive Care Unit nurse, I’m dedicated to providing compassionate, evidence-based care. I enjoy deep clinical thinking and plan to advance towards becoming a CRNA.</p>
+        <div class="placeholder">Career-related content will go here.</div>
+    </div>
+    
+    <div id="projects" class="section">
+        <h1>Projects &amp; Tech</h1>
+        <p>I develop tools to improve my own routines, like a practice tracker for guitarists. I’m also exploring local AI models and Python projects.</p>
+        <div class="placeholder">Project details will go here.</div>
+    </div>
+    
+    <div id="friends" class="section">
+        <h1>Friends &amp; Life</h1>
+        <p>Life isn’t all work and practice. The people around me shape who I am and provide the laughs and adventures that inspire my songs. I cherish time spent with friends and family.</p>
+        <div class="placeholder">Friends and life photos will go here.</div>
+    </div>
+    
+    <div id="gallery" class="section">
+        <h1>Gallery</h1>
+        <p>This section will feature photos and artwork once they’re ready.</p>
+        <div class="placeholder">Gallery images will go here.</div>
+    </div>
 </body>
 </html>
