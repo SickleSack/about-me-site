@@ -84,6 +84,55 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
             margin: 10px 0;
         }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            /* Allow the tab buttons to wrap onto multiple rows */
+            .tabs {
+                flex-wrap: wrap;
+            }
+            /* Make each tab take up half of the row on medium screens */
+            .tabs button {
+                flex: 1 1 50%;
+                text-align: center;
+            }
+            /* Scale down the profile images for smaller screens */
+            .profile-img {
+                width: 150px;
+                height: 150px;
+                margin: 0 auto 20px auto;
+                display: block;
+            }
+            /* Allow section images to span the container width on smaller screens */
+            .section-img {
+                max-width: 100%;
+            }
+            /* Reduce gallery image height and tighten spacing */
+            .img-gallery {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 10px;
+            }
+            .img-gallery img {
+                height: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Stack the tabs vertically on very small screens */
+            .tabs button {
+                flex: 1 1 100%;
+                padding: 10px;
+            }
+            /* Further shrink profile images */
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+            /* Use smaller padding for the container */
+            .container {
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
